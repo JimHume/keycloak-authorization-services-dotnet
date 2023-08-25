@@ -1,6 +1,6 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
-using Models;
+using Keycloak.AuthServices.Sdk.Admin.Models.Users;
 using Refit;
 
 /// <summary>
