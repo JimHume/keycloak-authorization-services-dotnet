@@ -1,7 +1,8 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+namespace Keycloak.AuthServices.Sdk.Admin;
 
 using Constants;
-using Models;
+using Models.Groups;
+using Models.Users;
 using Refit;
 using Requests.Groups;
 using Requests.Users;
@@ -97,12 +98,33 @@ public interface IKeycloakUserClient
         [Body] List<string>? actions = default);
 
     /// <summary>
-    /// Get a users's groups.
+    /// Add the given user to the given group.
     /// </summary>
-    /// <param name="realm">Realm name (not ID).</param>
-    /// <param name="userId">User ID.</param>
-    /// <param name="parameters">Optional query parameters.</param>
-    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <param name="groupId"></param>
+    /// <returns></returns>
+    [Put(KeycloakClientApiConstants.UserGroupUpdate)]
+    [Headers("Content-Type: application/json")]
+    Task JoinGroup(string realm, [AliasAs("id")] string userId, [AliasAs("group_id")] string groupId);
+
+    /// <summary>
+    /// Remove the given user from the given group.
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <param name="groupId"></param>
+    /// <returns></returns>
+    [Delete(KeycloakClientApiConstants.UserGroupUpdate)]
+    [Headers("Content-Type: application/json")]
+    Task LeaveGroup(string realm, [AliasAs("id")] string userId, [AliasAs("group_id")] string groupId);
+
+    /// <summary>
+    /// Get all the groups the user belongs to.
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     [Get(KeycloakClientApiConstants.GetUserGroups)]
     Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetGroupRequestParameters? parameters = default);
 }
