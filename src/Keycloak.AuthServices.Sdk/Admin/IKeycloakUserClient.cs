@@ -126,5 +126,5 @@ public interface IKeycloakUserClient
     /// <param name="userId"></param>
     /// <returns></returns>
     [Get(KeycloakClientApiConstants.GetUserGroups)]
-    Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetGroupRequestParameters? parameters = default);
+    Task<IEnumerable<Group>> GetUserGroups(string realm, [AliasAs("id")] string userId, [Query] GetGroupsRequestParameters? parameters = default);
 }

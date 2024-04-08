@@ -9,7 +9,7 @@ using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
 using Sdk.Admin.Requests.Groups;
-using Keycloak.AuthServices.Sdk.Admin.Models;
+
 using Sdk.Admin.Models.Groups;
 
 public class KeycloakGroupClientTests

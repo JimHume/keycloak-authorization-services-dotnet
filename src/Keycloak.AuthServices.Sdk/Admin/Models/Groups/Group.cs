@@ -1,3 +1,4 @@
+#pragma warning disable CS1591, CS8618
 namespace Keycloak.AuthServices.Sdk.Admin.Models.Groups;
 
 /// <summary>

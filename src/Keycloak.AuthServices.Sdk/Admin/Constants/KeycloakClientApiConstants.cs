@@ -42,7 +42,6 @@ internal static class KeycloakClientApiConstants
 
     internal const string SendVerifyEmail = $"{GetUser}/send-verify-email";
 
-    internal const string SendVerifyEmail = $"{GetUser}/send-verify-email";
     internal const string ExecuteActionsEmail = $"{GetUser}/execute-actions-email";
 
     internal const string GetUserGroups = $"{GetUser}/groups";

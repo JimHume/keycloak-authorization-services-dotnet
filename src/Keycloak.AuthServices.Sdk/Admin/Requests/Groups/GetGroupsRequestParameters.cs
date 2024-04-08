@@ -24,7 +24,7 @@ public class GetGroupsRequestParameters
     /// </summary>
     [AliasAs("exact")]
     public bool? Exact { get; init; }
-    
+
     /// <summary>
     /// Maximum results size. Default is 100.
     /// </summary>
